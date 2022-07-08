@@ -1,0 +1,38 @@
+<%-layout("layout/boilerplate")%>
+<link rel="stylesheet" href="/style.css">
+<div class="container">
+    <div class="card">
+        <div class="heading">
+            <p>Add from Excel</p>
+            <i class="fa-solid fa-xmark "></i>
+        </div>
+        <div class="title">Add Candidates to Database</div>
+        <div class="form">
+            <% if(success&&success.length){ %> 
+            <div class="flash">
+            <div class="success_heading">
+                <h3>Thank You</h3>
+            </div>
+            <p><i class="fa-solid fa-check fa-lg tick"></i>File Successfully Submitted</p>
+            <p>Your records will be processed shortly</p>
+        </div>
+        <% }else{%>
+            <form action="/" method="post" enctype="multipart/form-data">
+                <input type="file" name="excel" id="file" hidden>
+                <label for="file"> 
+                    <i class="fas fa-upload"></i>
+                </label>
+                <p class="description"></p>
+              <p class="about">Upload .xlsx or .xls file here</p>
+                <div class="button">
+             <button type="submit" class="">Submit</button>
+            </div>
+            </form>
+            <%}%>  
+        </div>
+    </div>
+</div>
+
+
+
+<script src="script.js"></script>
